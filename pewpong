@@ -1,0 +1,76 @@
+import random
+import time
+import turtle
+from paddle import Paddle
+from ball import Ball
+from printer import Printer
+from imagehandler import *
+
+wn = turtle.Screen()
+for i in imageResources:
+    wn.register_shape(i)
+wn.title("PewPong")
+#wn.bgcolor("black")
+wn.setup(width=800, height=600)
+wn.bgpic("images/space.gif")
+
+#-400 <> 400
+#300^-300
+wn.tracer(0)
+
+#Paddles
+paddle_a = Paddle(-350,0,r,img_r_gray_ammo,img_r_ammo)
+paddle_b = Paddle(350,0,b,img_b_gray_ammo,img_b_ammo)
+
+#Ball
+ball_main = Ball()
+ball_main.set_main()
+
+#Scoreprinter
+score = Printer(0,260)
+score.display("Player A: 0  Player B: 0")
+
+#Keybindings
+#TODO cant hold down buttons at the same time for fast movements, only one paddle in turn
+wn.listen()
+wn.onkeypress(paddle_a.move_up, "w")
+wn.listen()
+wn.onkeypress(paddle_a.move_down, "s")
+wn.listen()
+wn.onkeypress(paddle_b.move_up, "Up")
+wn.listen()
+wn.onkeypress(paddle_b.move_down, "Down")
+wn.listen()
+wn.onkeypress(paddle_a.shoot, "d")
+wn.listen()
+wn.onkeypress(paddle_b.shoot, "Left")
+
+
+
+#Main game loop
+while True:
+    time.sleep(1 / 350)
+    wn.update()
+
+    ball_main.move()
+    ball_main.check_collisions_border(paddle_a, paddle_b, score)
+    ball_main.check_collisions_paddles(paddle_a, paddle_b)
+
+    for ball in paddle_a.balls.copy():
+        ball.move()
+        ball.check_collisions_border(paddle_a, paddle_b, score)
+        ball.check_collisions_paddles(paddle_a, paddle_b)
+
+    for ball in paddle_b.balls.copy():
+        ball.move()
+        ball.check_collisions_border(paddle_a, paddle_b, score)
+        ball.check_collisions_paddles(paddle_a, paddle_b)
+
+    #print("player A: {}".format(paddle_a.balls))
+    #print("player B: {}".format(paddle_b.balls))
+
+
+
+
+
+
