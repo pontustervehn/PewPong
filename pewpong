@@ -10,12 +10,9 @@ wn = turtle.Screen()
 for i in imageResources:
     wn.register_shape(i)
 wn.title("PewPong")
-#wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.bgpic("images/space.gif")
 
-#-400 <> 400
-#300^-300
 wn.tracer(0)
 
 #Paddles
@@ -26,7 +23,7 @@ paddle_b = Paddle(350,0,b,img_b_gray_ammo,img_b_ammo)
 ball_main = Ball()
 ball_main.set_main()
 
-#Scoreprinter
+#Score printer
 score = Printer(0,260)
 score.display("Player A: 0  Player B: 0")
 
@@ -65,9 +62,6 @@ while True:
         ball.move()
         ball.check_collisions_border(paddle_a, paddle_b, score)
         ball.check_collisions_paddles(paddle_a, paddle_b)
-
-    #print("player A: {}".format(paddle_a.balls))
-    #print("player B: {}".format(paddle_b.balls))
 
 
 

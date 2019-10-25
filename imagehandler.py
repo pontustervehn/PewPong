@@ -19,9 +19,51 @@ b2b = 'images/spaceship-blue2b.gif'
 b3b = 'images/spaceship-blue3b.gif'
 b4b = 'images/spaceship-blue4b.gif'
 
-imageResources =[r,r1g,r2g,r3g,r4g,r1r,r2r,r3r,r4r,b,b1g,b2g,b3g,b4g,b1b,b2b,b3b,b4b]
+imageResources = [
+    r,
+    r1g,
+    r2g,
+    r3g,
+    r4g,
+    r1r,
+    r2r,
+    r3r,
+    r4r,
+    b,
+    b1g,
+    b2g,
+    b3g,
+    b4g,
+    b1b,
+    b2b,
+    b3b,
+    b4b,
+]
 
-img_r_gray_ammo = [r1g,r2g,r3g,r4g]
-img_r_ammo = [r1r,r2r,r3r,r4r]
-img_b_gray_ammo = [b1g,b2g,b3g,b4g]
-img_b_ammo = [b1b,b2b,b3b,b4b]
+img_r_gray_ammo = [
+    r1g,
+    r2g,
+    r3g,
+    r4g,
+]
+
+img_r_ammo = [
+    r1r,
+    r2r,
+    r3r,
+    r4r,
+]
+
+img_b_gray_ammo = [
+    b1g,
+    b2g,
+    b3g,
+    b4g,
+]
+
+img_b_ammo = [
+    b1b,
+    b2b,
+    b3b,
+    b4b,
+]

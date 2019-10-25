@@ -70,11 +70,3 @@ class Paddle:
             self.charging_mode = True
             self.set_shape(self.shape)
 
-
-
-    def change_ammo_state(self, var):
-        if var > 0 and self.ammo_state < 8:
-            self.ammo_state += 1
-
-        #if var < 0 and self.ammo_state
-
