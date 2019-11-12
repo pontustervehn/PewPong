@@ -23,6 +23,7 @@ class Paddle:
         self.paddle.goto(self.xpos, self.ypos)
 
     def move_up(self):
+        print("paddle_UP: {}".format(self))
         if self.paddle.ycor() < 240:
             y = self.paddle.ycor()
             y += 25

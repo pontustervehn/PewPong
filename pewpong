@@ -28,20 +28,13 @@ score = Printer(0,260)
 score.display("Player A: 0  Player B: 0")
 
 #Keybindings
-#TODO cant hold down buttons at the same time for fast movements, only one paddle in turn
-wn.listen()
 wn.onkeypress(paddle_a.move_up, "w")
-wn.listen()
 wn.onkeypress(paddle_a.move_down, "s")
-wn.listen()
 wn.onkeypress(paddle_b.move_up, "Up")
-wn.listen()
 wn.onkeypress(paddle_b.move_down, "Down")
-wn.listen()
 wn.onkeypress(paddle_a.shoot, "d")
-wn.listen()
 wn.onkeypress(paddle_b.shoot, "Left")
-
+wn.listen()
 
 
 #Main game loop

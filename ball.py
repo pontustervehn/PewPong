@@ -19,7 +19,6 @@ class Ball:
         self.ball.dx = dx
         self.ball.dy = dy
 
-#TODO fix speed
     def move(self):
         #self.ball.dx = dx
         #self.ball.dy = dy
@@ -106,7 +105,7 @@ class Ball:
         if (self.ball.xcor() > 340 and self.ball.xcor() < 350) and (self.ball.ycor() < p_b_y + 46 and self.ball.ycor() > p_b_y -45):
             winsound.PlaySound("bounce2.wav", winsound.SND_ASYNC)
             self.ball.setx(340)
-            self.ball.dx *= -1
+            self.ball.dx *= -1 * random.uniform(0.99, 1.01)
             if self.main and (self.ball.ycor() < p_b_y + 10 and self.ball.ycor() > p_b_y -10):
                 paddle_b.load_ammo()
 
@@ -114,6 +113,6 @@ class Ball:
         if (self.ball.xcor() < -340 and self.ball.xcor() > -350) and (self.ball.ycor() < p_a_y + 46 and self.ball.ycor() > p_a_y -45):
             winsound.PlaySound("bounce2.wav", winsound.SND_ASYNC)
             self.ball.setx(-340)
-            self.ball.dx *= -1
+            self.ball.dx *= -1 * random.uniform(0.99, 1.01)
             if self.main and (self.ball.ycor() < p_a_y + 10 and self.ball.ycor() > p_a_y -10):
                 paddle_a.load_ammo()
